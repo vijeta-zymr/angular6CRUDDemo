@@ -1,5 +1,5 @@
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
+    /**
+ * Created By : Vijeta Rathod
  */
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
@@ -26,6 +26,6 @@ describe('StudentDetailsComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
+    /**
+ * Created By : Vijeta Rathod
  */

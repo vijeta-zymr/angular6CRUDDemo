@@ -1,5 +1,5 @@
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
+    /**
+ * Created By : Vijeta Rathod
  */
 
 import { TestBed, inject } from '@angular/core/testing';
@@ -18,6 +18,6 @@ describe('StudentService', () => {
   }));
 });
 
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
+    /**
+ * Created By : Vijeta Rathod
  */

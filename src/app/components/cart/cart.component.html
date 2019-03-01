@@ -1,0 +1,42 @@
+<!-- Created By : Vijeta Rathod -->
+
+<div class="w3-container" *ngIf="ProductListData">
+    <div class="w3-panel w3-round-small w3-teal">
+      <h3>Cart
+         <!-- <button routerLink="/product/add" class="w3-button w3-green custom-button"><i class="w3-medium  fa fa-plus"></i> Add New Product</button> -->
+      </h3>
+      
+    </div>
+    <!-- <span><i class="w3-medium fa fa-search"></i> Search : <input class="" type="text" [(ngModel)]='filterData'></span> -->
+  
+    <div class="w3-panel w3-green" *ngIf="(ProductListData | filter:filterData).length === 0">
+      <h3>Oh no</h3>
+      <p>No Products found <span *ngIf="filterData"> with search "{{filterData}}"</span> </p>
+    </div>
+    <div class="w3-panel w3-light-grey w3-padding-16 w3-card-2" *ngIf="(ProductListData | filter:filterData | filter:filterData).length != 0">
+      <table class="w3-table w3-striped w3-bordered">
+        <tr>
+          <th>Sr. No.</th>
+          <th>Product Name</th>
+          <th>Variant</th>
+          <th>Options</th>
+          <th>Qty</th>
+          <th>Price</th>
+          <!-- <th><i class="w3-medium custom-icon fa fa-pencil"></i> Update</th> -->
+          <!-- <th><i class="w3-medium custom-icon fa fa-pencil"></i> Cart</th> -->
+        </tr>
+        <tr *ngFor="let Product of ProductListData | filter:filterData; index as i;" appHighlightProduct>
+          <td>{{i +1}}</td>
+          <td class="pointer">{{Product.productname}}</td>
+          <td class="pointer">{{Product.variant == 1 ? 'veg' : 'non-veg'}}</td>
+          <td class="pointer">{{Product.options}}</td>
+          <td class="pointer">{{Product.qty}}</td>
+          <td class="pointer">{{Product.price}}</td>
+          <!-- <td><button [routerLink]="['update', i]" class="w3-button w3-blue">Update</button></td> -->
+          <!-- <td><button (click)="addtocart(Product.id);" class="w3-button w3-red">Add to Cart</button></td> -->
+        </tr>
+      </table>
+    </div>
+  </div>
+  
+  <!-- Created By : Vijeta Rathod -->

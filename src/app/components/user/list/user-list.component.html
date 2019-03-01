@@ -1,0 +1,66 @@
+<!-- Created By : Vijeta Rathod -->
+
+<div class="w3-container" *ngIf="UserListData">
+	<div class="w3-panel w3-round-small w3-teal">
+		<h3>User List
+			 <button routerLink="/user/add" class="w3-button w3-green custom-button"><i class="w3-medium  fa fa-plus"></i> Add New User</button>
+		</h3>		
+	</div>
+	<span><i class="w3-medium fa fa-search"></i> Search : <input class="" type="text" [(ngModel)]='filterData'></span>
+
+	<div class="w3-panel w3-green" *ngIf="(UserListData | filter:filterData).length === 0">
+		<h3>Oh no</h3>
+		<p>No Users found <span *ngIf="filterData"> with search "{{filterData}}"</span> </p>
+	</div>
+	<!-- class="w3-panel w3-light-grey w3-padding-16 w3-card-2"  -->
+	<div class="col-md-6 col-md-offset-3" *ngIf="(UserListData | filter:filterData | filter:filterData).length != 0">
+		<table class="w3-table w3-striped w3-bordered">
+			<tr>
+				<th>Sr. No.</th>
+				<!-- <th>ID</th> -->
+				<th class="pointer" (click)="sort('name')">Name</th>
+				<th>Email</th>
+				<th>Role</th>
+				<!-- <th><i class="w3-medium custom-icon fa fa-pencil"></i> Update</th> -->
+				<!-- <th><i class="w3-medium custom-icon fa fa-pencil"></i> Cart</th> -->
+			</tr>
+			<tr *ngFor="let User of UserListData | filter:filterData | orderBy: {property: column, direction: direction}; index as i;" appHighlightUser>
+				<td>{{i +1}}</td>
+				<td class="pointer" (click)="openModal('custom-modal-1',User.id)">{{User.name}} </td>
+				<td class="pointer" [routerLink]="['detail', User.id]">{{User.email}}</td>
+				<td class="pointer" [routerLink]="['detail', User.id]">{{User.role==1?'Admin':'Editor'}}</td>
+				<!-- <td><button [routerLink]="['update', i]" class="w3-button w3-blue">Update</button></td> -->
+				<!-- <td><button (click)="addtocart(User.id);" class="w3-button w3-red">Add to Cart</button></td> -->
+			</tr>
+		</table>
+		<button (click)="openModal('custom-modal-1',2)">Open Modal 1</button>
+		<button (click)="openModal('custom-modal-2')">Open Modal 2</button>	
+		<p>Value of child component is: {{ CData }}</p>			
+	</div>	
+	<modal id="custom-modal-1">
+		<div class="modal">
+			<div class="modal-body">
+				<!-- <h1>A Custom Modal!</h1> -->
+				{{modalUId}}
+				<app-user-details [UData]="modalUId" (childEvent)="CData=$event" *ngIf="modalUId && modalUId != 0"></app-user-details>
+				<!-- <p>
+					Home page text: <input type="text" [(ngModel)]="bodyText" />
+				</p> -->
+				<button (click)="closeModal('custom-modal-1');">Close</button>
+			</div>
+		</div>
+		<div class="modal-background"></div>
+	</modal>
+	
+	<modal id="custom-modal-2">
+		<div class="modal">
+			<div class="modal-body">
+				<h1 style="height:1000px">A Tall Custom Modal!</h1>
+				<button (click)="closeModal('custom-modal-2');">Close</button>
+			</div>
+		</div>
+		<div class="modal-background"></div>
+	</modal>
+</div>
+
+<!-- Created By : Vijeta Rathod -->

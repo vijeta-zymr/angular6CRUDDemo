@@ -1,5 +1,5 @@
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
+    /**
+ * Created By : Vijeta Rathod
  */
 
 import { PhonePipe } from './phone.pipe';
@@ -12,6 +12,6 @@ describe('PhonePipe', () => {
 });
 
 
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
+    /**
+ * Created By : Vijeta Rathod
  */

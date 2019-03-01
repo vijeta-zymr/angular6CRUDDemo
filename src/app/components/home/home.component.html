@@ -1,12 +1,21 @@
-<!-- Created By : Sangwin Gawande (http://sangw.in) -->
+<!-- Created By : Vijeta Rathod -->
 
 <!-- Side Bar -->
 <nav class="w3-sidebar w3-bar-block w3-collapse w3-animate-left w3-card-2" style="z-index:3;width:250px;" id="mySidebar">
 	<!-- Logo -->
-	<img src="assets/sangwin-logo.png" class="logo">
+	<div class="text-center" style="height:80px;">
+			<label class="w3-text-blue"><b>SIDEBAR</b></label>
+	</div>
 	<!-- Sidebar Links -->
-	<a class="w3-bar-item w3-button" [ngClass]="{'w3-teal': (active === '/')}" routerLink="/"> <i class="w3-medium fa fa-user"></i>  User List</a>
-	<a class="w3-bar-item w3-button" routerLink="/add"  [ngClass]="{'w3-teal': (active === '/add')}"> <i class="w3-medium fa fa-plus"></i>  Add new user</a>
+	
+	<a class="w3-bar-item w3-button" routerLink="/dashboard"  [ngClass]="{'w3-teal': (active === '/dashboard')}"> <i class="w3-medium fa fa-plus"></i>  Dashboard</a>
+	<!-- <a class="w3-bar-item w3-button" [ngClass]="{'w3-teal': (active === '/')}" routerLink="/"> <i class="w3-medium fa fa-user"></i>  User List</a>
+	<a class="w3-bar-item w3-button" routerLink="/add"  [ngClass]="{'w3-teal': (active === '/add')}"> <i class="w3-medium fa fa-plus"></i>  Add new user</a> -->
+	<a class="w3-bar-item w3-button" [ngClass]="{'w3-teal': (active === '/product')}" routerLink="/product"> <i class="w3-medium fa fa-user"></i>  Product List</a>
+	<a *ngIf="loggedInUserRole=='1'" class="w3-bar-item w3-button" [ngClass]="{'w3-teal': (active === '/user')}" routerLink="/user"> <i class="w3-medium fa fa-user"></i>  User List</a>
+	<a *ngIf="loggedInUserRole=='2'" class="w3-bar-item w3-button" [ngClass]="{'w3-teal': (active === '/profile')}" [routerLink]="['/user/profile', loggedInUserId]"> <i class="w3-medium fa fa-user"></i>  User Profile</a>
+	<a class="w3-bar-item w3-button" [ngClass]="{'w3-teal': (active === '/observable')}" routerLink="/observable"> <i class="w3-medium fa fa-plus"></i>  observable</a>
+	<a class="w3-bar-item w3-button" [ngClass]="{'w3-teal': (active === '/learnrxjs')}" routerLink="/learnrxjs"> <i class="w3-medium fa fa-plus"></i>  Learn RXJS</a>
 	<a class="w3-bar-item w3-button" (click)="logOut()"><i class="w3-medium fa fa-sign-out"></i>  Logout</a>
 </nav>
 
@@ -15,7 +24,31 @@
 	<div class="w3-container">
 	<!-- Initiate Child Routing -->
 		<router-outlet></router-outlet>
+		<!-- <button (click)="openModal('custom-modal-1')">Open Modal 1</button>
+		<button (click)="openModal('custom-modal-2')">Open Modal 2</button>	 -->
 	</div>
+	<!-- <modal id="custom-modal-1">
+		<div class="modal">
+			<div class="modal-body">
+				<h1>A Custom Modal!</h1>
+				<p>
+					Home page text: <input type="text" [(ngModel)]="bodyText" />
+				</p>
+				<button (click)="closeModal('custom-modal-1');">Close</button>
+			</div>
+		</div>
+		<div class="modal-background"></div>
+	</modal>
+	
+	<modal id="custom-modal-2">
+		<div class="modal">
+			<div class="modal-body">
+				<h1 style="height:1000px">A Tall Custom Modal!</h1>
+				<button (click)="closeModal('custom-modal-2');">Close</button>
+			</div>
+		</div>
+		<div class="modal-background"></div>
+	</modal> -->
 </div>
 
-<!-- Created By : Sangwin Gawande (http://sangw.in) -->
+<!-- Created By : Vijeta Rathod -->

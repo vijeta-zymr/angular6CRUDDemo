@@ -1,5 +1,5 @@
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
+    /**
+ * Created By : Vijeta Rathod
  */
 
 import { TestBed, async } from '@angular/core/testing';
@@ -30,6 +30,6 @@ describe('AppComponent', () => {
   }));
 });
 
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
+    /**
+ * Created By : Vijeta Rathod
  */

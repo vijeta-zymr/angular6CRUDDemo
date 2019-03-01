@@ -1,5 +1,5 @@
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
+    /**
+ * Created By : Vijeta Rathod
  */
 
 import { Component, OnInit } from '@angular/core';
@@ -53,6 +53,6 @@ export class StudentListComponent implements OnInit {
 		}
 	}
 }
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
+    /**
+ * Created By : Vijeta Rathod
  */

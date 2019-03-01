@@ -1,0 +1,39 @@
+<!-- <p>
+  learnrxjs works!
+</p> -->
+<div>
+  <h5>Learn RXJS Operators</h5>
+  <h6>Combination Operators</h6>
+  <div id="app"></div>
+  <button (click)="combineAll()">CombineAll</button>
+  <button (click)="combineLatest()">CombineLatest</button>
+  <button (click)="combineProject()">CombineProject</button>
+  <button (click)="combineFrom2Buttons()">Combining events from two buttons</button>
+  <div>
+    <button id='red'>Red</button>
+    <button id='black'>Black</button>
+  </div>
+  <div>Red: <span id="redTotal"></span> </div>
+  <div>Black: <span id="blackTotal"></span> </div>
+  <div>Total: <span id="total"></span> </div>
+  <br/>
+  <button (click)="concatDelay()">cancat with delayed source</button>
+  <button (click)="concatAll()">cancat All</button>
+  <button (click)="concatAllPromise()">cancat All with promise</button>
+  <br/><br/>
+  <button (click)="forkJoin()">forkJoin</button>
+  <br/><br/>
+  <button (click)="mergeAllPromise()">merge all with promise</button>
+  <button (click)="mergeAllConcurrent()">merge all with concurrent parameters</button>
+  <br/><br/>
+  <button (click)="race()">race</button>
+  <br/><br/>
+  <button (click)="retry()">retry</button>
+  <button (click)="retryWhen()">retryWhen</button>
+  <br/><br/>
+  <button (click)="takeUntill()">takeUntill Simple</button>
+  <button (click)="takeUntillEven()">takeUntill Even Numbers</button>
+  <button (click)="debounceTime()">Debounce time</button>
+  <input type="text" id="example">
+  
+</div>

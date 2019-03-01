@@ -1,5 +1,5 @@
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
+    /**
+ * Created By : Vijeta Rathod
  */
 
 import { HighlightStudentDirective } from './highlight-student.directive';
@@ -11,6 +11,6 @@ describe('HighlightStudentDirective', () => {
   });
 });
 
-/**
- * Created By : Sangwin Gawande (http://sangw.in)
+    /**
+ * Created By : Vijeta Rathod
  */
