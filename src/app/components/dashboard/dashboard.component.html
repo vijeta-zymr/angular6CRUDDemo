@@ -23,6 +23,63 @@
 <div class="w3-main" style="margin-left:250px;">
 	<div class="w3-container">
 		Dashboard Works!!!
+		<div style="width: 100%;border:1px solid red;">
+			<ngx-datatable
+			  #table
+			  class="material"
+			  [columnMode]="'force'"
+			  [scrollbarH]="true"
+			  [headerHeight]="50"
+			  [footerHeight]="50"
+			  [rowHeight]="'auto'"
+			  [rows]="rows">
+			  <ngx-datatable-column name="Name" [width]="100">
+				<ng-template let-value="value" ngx-datatable-cell-template>
+				  {{value}}
+				</ng-template>
+			  </ngx-datatable-column>
+			  <ngx-datatable-column name="Name" [width]="100">
+				<ng-template let-value="value" ngx-datatable-cell-template>
+				  {{value}}
+				</ng-template>
+			  </ngx-datatable-column>
+			  <ngx-datatable-column name="Name" [width]="100">
+				<ng-template let-value="value" ngx-datatable-cell-template>
+				  {{value}}
+				</ng-template>
+			  </ngx-datatable-column>
+			  <ngx-datatable-column name="Name" [width]="100">
+				<ng-template let-value="value" ngx-datatable-cell-template>
+				  {{value}}
+				</ng-template>
+			  </ngx-datatable-column>
+			  <ngx-datatable-column name="Name" [width]="100">
+				<ng-template let-value="value" ngx-datatable-cell-template>
+				  {{value}}
+				</ng-template>
+			  </ngx-datatable-column>
+			  <ngx-datatable-column name="Name" [width]="100">
+				<ng-template let-value="value" ngx-datatable-cell-template>
+				  {{value}}
+				</ng-template>
+			  </ngx-datatable-column>
+			  <ngx-datatable-column name="Name" [width]="100">
+				<ng-template let-value="value" ngx-datatable-cell-template>
+				  {{value}}
+				</ng-template>
+			  </ngx-datatable-column>
+			  <ngx-datatable-column name="Gender" [width]="100">
+				<ng-template let-row="row" let-value="value" ngx-datatable-cell-template>
+				  {{value}}
+				</ng-template>
+			  </ngx-datatable-column>
+			  <ngx-datatable-column name="Age" [width]="300">
+				<ng-template let-value="value" ngx-datatable-cell-template>
+				  {{value}}
+				</ng-template>
+			  </ngx-datatable-column>
+			</ngx-datatable>
+		  </div>
 	<!-- Initiate Child Routing -->
 		<router-outlet></router-outlet>
 	</div>

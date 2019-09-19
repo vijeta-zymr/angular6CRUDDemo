@@ -46,11 +46,13 @@ import { ModalService } from './services/modal/modal.service';
 import { ModalComponent } from './components/modal/modal/modal.component';
 
 
-import { SocketIoModule, SocketIoConfig } from 'ng6-socket-io';
+// import { SocketIoModule, SocketIoConfig } from 'ng6-socket-io';
 import { ObservableComponent } from './components/observable/observable/observable.component';
 import { LearnrxjsComponent } from './components/learnrxjs/learnrxjs.component';
+
+import { NgxDatatableModule } from '@swimlane/ngx-datatable';
  
-const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
+// const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 
 @NgModule({
 	declarations: [
@@ -84,7 +86,8 @@ const config: SocketIoConfig = { url: 'http://localhost:3000', options: {} };
 		ReactiveFormsModule,
 		BrowserAnimationsModule,
 		HttpClientModule,
-		SocketIoModule.forRoot(config),
+		NgxDatatableModule,
+		// SocketIoModule.forRoot(config),
 		ToastrModule.forRoot({
 			timeOut: 3000,
 			positionClass: 'toast-bottom-right',

@@ -2,9 +2,10 @@
  * Created By : Vijeta Rathod
  */
 
- import { Component, OnInit } from '@angular/core';
+ import { Component, OnInit, ViewChild } from '@angular/core';
  import { RouterModule, Routes ,Router} from '@angular/router';
  import { ToastrService } from 'ngx-toastr';
+ import { DatatableComponent } from '@swimlane/ngx-datatable';
 
  // Components
  import { StudentListComponent } from '../student/list/student-list.component';
@@ -25,6 +26,8 @@
 
 
  export class DashboardComponent implements OnInit {
+	@ViewChild(DatatableComponent) table:DatatableComponent;
+	rows = [];
 	 active:string;
 	 private rec: User;
 	 private loggedInUserId:number;
@@ -42,6 +45,42 @@
 		this.loggedInUserId = this.rec.id;
 		this.loggedInUserRole = this.rec.role;
 		console.log('this.loggedInUserId',this.loggedInUserId);
+
+		this.rows = [
+			{
+				"name": "Ethel Price",
+				"gender": "female",
+				"company": "Johnson, Johnson and Partners, LLC CMP DDC",
+				"age": 22
+			},
+			{
+				"name": "Claudine Neal",
+				"gender": "female",
+				"company": "Sealoud",
+				"age": 55
+			},
+			{
+				"name": "Beryl Rice",
+				"gender": "female",
+				"company": "Velity",
+				"age": 67
+			},
+			{
+				"name": "Wilder Gonzales",
+				"gender": "male",
+				"company": "Geekko"
+			},
+			{
+				"name": "Georgina Schultz",
+				"gender": "female",
+				"company": "Suretech"
+			},
+			{
+				"name": "Carroll Buchanan",
+				"gender": "male",
+				"company": "Ecosys"
+			}
+		  ];
  	}
 
  	// Detect route changes for active sidebar menu
@@ -54,7 +93,7 @@
  		this.toastr.success('Success', "Logged Out Successfully");
  		localStorage.removeItem('userData');
  		this.router.navigate(['/login']);
- 	}
+	 }
  }
 
 
