@@ -21,7 +21,7 @@
     "@angular/router": "~7.1.0",
     "@types/lodash": "^4.14.121",
     "core-js": "^2.5.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "@swimlane/ngx-datatable": "13.1.0",
     "ngx-toastr": "^9.1.1",
     "rxjs": "~6.3.3",
